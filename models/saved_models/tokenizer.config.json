@@ -1,1 +1,1 @@
-{"max_words": 10000, "max_length": 50, "oov_token": "<OOV>", "padding": "post", "truncating": "post", "vocabulary_size": 3863, "is_fitted": true}
+{"max_words": 10000, "max_length": 50, "oov_token": "<OOV>", "padding": "post", "truncating": "post", "vocabulary_size": 3834, "is_fitted": true}

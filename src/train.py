@@ -153,17 +153,26 @@ def build_model(config: Dict[str, Any], vocab_size: int) -> Any:
             use_attention=True
         )
     else:
-        model = create_model(
-            model_type=model_type,
-            vocab_size=vocab_size,
-            embedding_dim=config['model']['embedding_dim'],
-            max_length=config['data']['max_sequence_length'],
-            lstm_units=config['model']['lstm_units'] if model_type == 'lstm' else None,
-            gru_units=config['model']['lstm_units'] if model_type == 'gru' else None,
-            dense_units=config['model']['dense_units'],
-            dropout_rate=config['model']['dropout_rate'],
-            recurrent_dropout=config['model']['recurrent_dropout']
-        )
+        # Siapkan parameter berdasarkan model type
+        model_params = {
+            'model_type': model_type,
+            'vocab_size': vocab_size,
+            'embedding_dim': config['model']['embedding_dim'],
+            'max_length': config['data']['max_sequence_length'],
+            'dense_units': config['model']['dense_units'],
+            'dropout_rate': config['model']['dropout_rate'],
+            'recurrent_dropout': config['model']['recurrent_dropout']
+        }
+        
+        # Tambahkan parameter spesifik model
+        if model_type == 'lstm':
+            model_params['lstm_units'] = config['model']['lstm_units']
+        elif model_type == 'gru':
+            model_params['gru_units'] = config['model']['lstm_units']
+        elif model_type == 'cnn_lstm':
+            model_params['lstm_units'] = config['model']['lstm_units']
+        
+        model = create_model(**model_params)
     
     # Build dan compile
     model.build()
