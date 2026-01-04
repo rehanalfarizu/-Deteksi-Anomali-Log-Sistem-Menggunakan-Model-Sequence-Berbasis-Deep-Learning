@@ -1,0 +1,70 @@
+# ============================================================
+# Konfigurasi Deteksi Anomali Log Sistem
+# ============================================================
+
+# Konfigurasi Data
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_file: "train_logs.csv"
+  test_file: "test_logs.csv"
+  max_sequence_length: 50
+  vocab_size: 10000
+
+# Konfigurasi Generator Data
+generator:
+  num_logs: 10000
+  anomaly_ratio: 0.1
+  random_seed: 42
+
+# Konfigurasi Preprocessing
+preprocessing:
+  lowercase: true
+  remove_special_chars: true
+  remove_numbers: false
+  min_word_frequency: 2
+  max_words: 10000
+
+# Konfigurasi Model
+model:
+  type: "lstm"  # Options: lstm, gru, bilstm
+  embedding_dim: 128
+  lstm_units: [64, 32]
+  dropout_rate: 0.3
+  recurrent_dropout: 0.2
+  dense_units: 16
+  output_activation: "sigmoid"
+
+# Konfigurasi Training
+training:
+  batch_size: 32
+  epochs: 50
+  learning_rate: 0.001
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+  metrics: ["accuracy", "precision", "recall"]
+  validation_split: 0.15
+  early_stopping:
+    patience: 5
+    monitor: "val_loss"
+    restore_best_weights: true
+  model_checkpoint:
+    save_best_only: true
+    monitor: "val_accuracy"
+
+# Konfigurasi Inferensi
+inference:
+  threshold: 0.5
+  batch_size: 64
+
+# Konfigurasi Output
+output:
+  model_dir: "models/saved_models"
+  results_dir: "results"
+  visualization_dir: "results/visualizations"
+  log_dir: "logs"
+
+# Konfigurasi Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

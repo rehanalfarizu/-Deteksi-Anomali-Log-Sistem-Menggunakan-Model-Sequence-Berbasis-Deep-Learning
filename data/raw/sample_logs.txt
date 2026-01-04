@@ -1,0 +1,50 @@
+2026-01-04 08:15:23 Accepted password for admin from 192.168.1.50 port 22 ssh2
+2026-01-04 08:15:45 systemd[1]: Started nginx.service
+2026-01-04 08:16:01 192.168.1.100 - - [04/Jan/2026:08:16:01 +0700] "GET /index.html HTTP/1.1" 200 1542
+2026-01-04 08:16:15 Connection received: host=192.168.1.75 user=developer database=production
+2026-01-04 08:17:02 [INFO] Application started successfully
+2026-01-04 08:17:30 kernel: [12345.678901] eth0: link up
+2026-01-04 08:18:00 192.168.1.102 - - [04/Jan/2026:08:18:00 +0700] "GET /api/v1/users HTTP/1.1" 200 3456
+2026-01-04 08:18:15 session opened for user developer by (uid=0)
+2026-01-04 08:19:00 [INFO] Cache hit for key: cache_key_542
+2026-01-04 08:19:30 MySQL server started with process id 15678
+2026-01-04 08:20:00 Failed password for invalid user admin from 185.220.101.45 port 54321 ssh2
+2026-01-04 08:20:02 Failed password for invalid user admin from 185.220.101.45 port 54322 ssh2
+2026-01-04 08:20:04 Failed password for invalid user root from 185.220.101.45 port 54323 ssh2
+2026-01-04 08:20:06 Failed password for invalid user test from 185.220.101.45 port 54324 ssh2
+2026-01-04 08:20:08 authentication failure; logname= uid=0 euid=0 tty=ssh ruser= rhost=185.220.101.45
+2026-01-04 08:21:00 [INFO] Request processed in 245ms
+2026-01-04 08:21:30 Accepted password for developer from 192.168.1.80 port 22 ssh2
+2026-01-04 08:22:00 192.168.1.103 - - [04/Jan/2026:08:22:00 +0700] "POST /api/v1/data HTTP/1.1" 200 128
+2026-01-04 08:22:30 systemd[1]: Starting postgresql.service...
+2026-01-04 08:23:00 PostgreSQL database system is ready to accept connections
+2026-01-04 08:23:15 admin: user NOT in sudoers; TTY=pts/0; PWD=/home/admin; USER=root; COMMAND=/bin/bash
+2026-01-04 08:23:45 [DEBUG] Processing request from 192.168.1.105
+2026-01-04 08:24:00 [INFO] User developer logged in successfully
+2026-01-04 08:24:30 session closed for user admin
+2026-01-04 08:25:00 kernel: Out of memory: Kill process 23456 (java) score 850
+2026-01-04 08:25:30 [ERROR] Database connection pool exhausted
+2026-01-04 08:26:00 ALERT: Suspicious process detected: cryptominer (PID: 99999)
+2026-01-04 08:26:30 192.168.1.106 - - [04/Jan/2026:08:26:30 +0700] "GET /static/js/app.js HTTP/1.1" 200 15678
+2026-01-04 08:27:00 Received disconnect from 192.168.1.50 port 22:11: disconnected by user
+2026-01-04 08:27:30 45.33.32.156 - - [04/Jan/2026:08:27:30 +0700] "GET /../../../etc/passwd HTTP/1.1" 400 0
+2026-01-04 08:28:00 Possible SQL injection attack from 45.33.32.156: ' OR '1'='1
+2026-01-04 08:28:30 [INFO] Application started successfully
+2026-01-04 08:29:00 systemd[1]: Stopped redis.service
+2026-01-04 08:29:30 WARNING: Unauthorized file modification: /etc/shadow
+2026-01-04 08:30:00 ALERT: Reverse shell connection attempt to 104.248.50.87:4444
+2026-01-04 08:30:30 kernel: [12400.123456] docker0: link up
+2026-01-04 08:31:00 192.168.1.107 - - [04/Jan/2026:08:31:00 +0700] "GET /images/logo.png HTTP/1.1" 200 8765
+2026-01-04 08:31:30 [INFO] Cache hit for key: cache_key_789
+2026-01-04 08:32:00 Accepted password for mysql from 127.0.0.1 port 22 ssh2
+2026-01-04 08:32:30 [CRITICAL] Database connection failed
+2026-01-04 08:33:00 DDoS attack detected from 185.220.102.8 - rate limit exceeded
+2026-01-04 08:33:30 systemd[1]: nginx.service failed
+2026-01-04 08:34:00 [INFO] Request processed in 123ms
+2026-01-04 08:34:30 session opened for user nginx by (uid=0)
+2026-01-04 08:35:00 kernel: [12450.654321] I/O error, dev sda, sector 123456789
+2026-01-04 08:35:30 [ERROR] Disk space critical: /var at 95% usage
+2026-01-04 08:36:00 192.168.1.108 - - [04/Jan/2026:08:36:00 +0700] "GET /css/style.css HTTP/1.1" 200 4321
+2026-01-04 08:36:30 Connection received: host=192.168.1.109 user=analyst database=analytics
+2026-01-04 08:37:00 [INFO] User analyst logged in successfully
+2026-01-04 08:37:30 Accepted password for postgres from 192.168.1.110 port 22 ssh2
