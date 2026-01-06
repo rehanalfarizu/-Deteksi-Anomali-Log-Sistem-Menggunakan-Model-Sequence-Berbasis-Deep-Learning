@@ -6,10 +6,15 @@
 data:
   raw_dir: "data/raw"
   processed_dir: "data/processed"
+  public_dir: "data/public"  # Untuk dataset publik
   train_file: "train_logs.csv"
   test_file: "test_logs.csv"
   max_sequence_length: 50
   vocab_size: 10000
+  
+  # Dataset source: 'synthetic' atau 'public' (hdfs, bgl, thunderbird)
+  dataset_source: "synthetic"
+  public_dataset: "hdfs"  # Options: hdfs, bgl, thunderbird
 
 # Konfigurasi Generator Data
 generator:
@@ -27,13 +32,46 @@ preprocessing:
 
 # Konfigurasi Model
 model:
-  type: "lstm"  # Options: lstm, gru, bilstm
+  # Options: lstm, gru, bilstm, cnn_lstm, autoencoder, 
+  #          transformer, transformer_cls, cnn_transformer
+  type: "bilstm"
+  
+  # Common parameters
   embedding_dim: 128
-  lstm_units: [64, 32]
   dropout_rate: 0.3
-  recurrent_dropout: 0.2
-  dense_units: 16
+  dense_units: 64
   output_activation: "sigmoid"
+  
+  # RNN parameters (lstm, gru, bilstm)
+  lstm_units: [64, 32]
+  recurrent_dropout: 0.2
+  use_attention: true  # Untuk bilstm
+  
+  # Transformer parameters
+  transformer:
+    num_heads: 4
+    ff_dim: 256
+    num_blocks: 2
+  
+  # CNN parameters (untuk cnn_lstm, cnn_transformer)
+  cnn:
+    filters: [64, 128]
+    kernel_sizes: [3, 4, 5]
+
+# Konfigurasi Transfer Learning
+transfer_learning:
+  enabled: false
+  embedding_type: "glove"  # Options: glove, fasttext, word2vec, custom
+  embedding_dim: 100
+  trainable_embeddings: false  # Freeze pre-trained embeddings
+  cache_dir: "embeddings/pretrained"
+  
+  # Custom embeddings (jika embedding_type='custom')
+  custom:
+    train_on_logs: true
+    vector_size: 100
+    window: 5
+    min_count: 2
 
 # Konfigurasi Training
 training:
@@ -51,6 +89,13 @@ training:
   model_checkpoint:
     save_best_only: true
     monitor: "val_accuracy"
+  
+  # Learning rate scheduler
+  lr_scheduler:
+    enabled: true
+    type: "reduce_on_plateau"  # Options: reduce_on_plateau, cosine, exponential
+    factor: 0.5
+    patience: 3
 
 # Konfigurasi Inferensi
 inference:
@@ -63,8 +108,20 @@ output:
   results_dir: "results"
   visualization_dir: "results/visualizations"
   log_dir: "logs"
+  embeddings_dir: "embeddings"
 
 # Konfigurasi Logging
 logging:
   level: "INFO"
   format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# ============================================================
+# Model Comparison (untuk eksperimen)
+# ============================================================
+experiment:
+  enabled: false
+  models_to_compare:
+    - lstm
+    - bilstm
+    - transformer
+  num_runs: 3  # Untuk averaging results
