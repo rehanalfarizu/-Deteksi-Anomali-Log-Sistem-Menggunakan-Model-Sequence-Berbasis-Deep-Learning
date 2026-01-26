@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://python.org)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10%2B-orange.svg)](https://tensorflow.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rehanalfarizu/big-data-mining-/blob/main/Anomaly_Detection_Colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rehanalfarizu/-Deteksi-Anomali-Log-Sistem-Menggunakan-Model-Sequence-Berbasis-Deep-Learning/blob/main/Anomaly_Detection_Colab.ipynb)
 
 ## 📋 Deskripsi Proyek
 
