@@ -174,7 +174,7 @@ Input Layer (sequence_length)
            │
            ▼
     ┌──────────────────────────┐
-    │   Transformer Block x N   │
+    │   Transformer Block x N  │
     │  ├─ Multi-Head Attention │
     │  ├─ Add & Norm           │
     │  ├─ Feed Forward         │
