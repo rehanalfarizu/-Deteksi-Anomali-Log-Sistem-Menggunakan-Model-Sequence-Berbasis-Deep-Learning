@@ -3,6 +3,11 @@
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://python.org)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.10%2B-orange.svg)](https://tensorflow.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/rehanalfarizu/Deteksi-Anomali-Log-Sistem-Menggunakan-Model-Sequence-Berbasis-Deep-Learning/blob/main/notebooks/Anomaly_Detection_Colab.ipynb)
+
+> 🚀 **Quick Start**: Klik badge **"Open in Colab"** di atas untuk langsung mencoba notebook dengan **100% dataset public HDFS** dari LogHub!
+> 
+> 📝 **Setup**: Lihat [COLAB_SETUP.md](COLAB_SETUP.md) untuk cara update link Colab dengan GitHub repo Anda.
 
 ## 📋 Deskripsi Proyek
 
@@ -85,6 +90,26 @@ Proyek ini mengimplementasikan sistem deteksi anomali pada log sistem menggunaka
 ```
 
 ## 🚀 Instalasi
+
+### Opsi 1: Google Colab (Termudah) ⭐
+
+**Tidak perlu instalasi!** Langsung buka di browser:
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/Deteksi-Anomali-Log-Sistem-Menggunakan-Model-Sequence-Berbasis-Deep-Learning/blob/main/notebooks/Anomaly_Detection_Colab.ipynb)
+
+> 📝 **Penting**: Ganti `yourusername` di URL badge dengan username GitHub Anda yang sebenarnya!
+
+**Format URL Colab:**
+```
+https://colab.research.google.com/github/{GITHUB_USERNAME}/{REPO_NAME}/blob/{BRANCH}/notebooks/Anomaly_Detection_Colab.ipynb
+```
+
+**Contoh:**
+```
+https://colab.research.google.com/github/john-doe/Deteksi-Anomali-Log-Sistem-Menggunakan-Model-Sequence-Berbasis-Deep-Learning/blob/main/notebooks/Anomaly_Detection_Colab.ipynb
+```
+
+### Opsi 2: Local Installation
 
 ### 1. Clone Repository
 ```bash
@@ -305,6 +330,39 @@ python src/inference.py --model models/saved_models/best_model.keras --input dat
 ```bash
 jupyter notebook notebooks/anomaly_detection_demo.ipynb
 ```
+
+### 🚀 Google Colab (Recommended)
+
+**Cara Tercepat untuk Mencoba Proyek Ini:**
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/Deteksi-Anomali-Log-Sistem-Menggunakan-Model-Sequence-Berbasis-Deep-Learning/blob/main/notebooks/Anomaly_Detection_Colab.ipynb)
+
+**Fitur Notebook Colab:**
+- ✅ **100% Dataset Public** - HDFS logs dari LogHub (no synthetic data)
+- ✅ **Auto Download** - Dataset otomatis diunduh dari LogHub
+- ✅ **Ready to Run** - Langsung bisa dijalankan tanpa setup
+- ✅ **Free GPU** - Gunakan GPU gratis dari Google Colab
+- ✅ **Reproducible** - Semua data dari sumber public dan verifiable
+
+**Langkah Penggunaan:**
+1. Klik badge **"Open in Colab"** di atas
+2. Copy notebook ke Drive Anda (File > Save a copy in Drive)
+3. Jalankan semua cells secara berurutan (Runtime > Run all)
+4. Dataset akan otomatis didownload dari LogHub
+5. Model akan ditraining dengan data HDFS public
+
+**Dataset yang Digunakan:**
+- Source: [LogHub - HDFS Dataset](https://github.com/logpai/loghub/tree/master/HDFS)
+- Size: 2000+ log lines (sample) atau full dataset
+- Labels: Normal vs Anomaly (labeled)
+- Type: Real Hadoop Distributed File System logs
+
+**Alternatif Dataset Public (Tersedia di Notebook):**
+- **BGL**: 4.7M+ logs, 348k+ anomalies
+- **Thunderbird**: 211M+ logs  
+- **Spirit**: 272k+ logs
+
+> 💡 **Tip**: Untuk hasil evaluasi yang lebih baik, gunakan BGL dataset yang memiliki lebih banyak anomaly samples.
 
 ## 📈 Hasil Eksperimen
 
